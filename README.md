@@ -1,36 +1,115 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Recharge + PWA
 
-## Getting Started
+A premium, executive-grade Progressive Web App for scheduling and accessing corporate wellness recharge rooms.
 
-First, run the development server:
+## 🎨 Design
 
+- **Color Scheme**: Deep navy (#0F172A) primary, soft cream (#FFFDF7) background, white cards
+- **Typography**: Inter font family with medium weights and ample spacing
+- **Style**: Premium, sophisticated, executive aesthetic with subtle shadows
+- **Mobile-first**: Fully responsive and touch-optimized for professional use
+
+## 🚀 Features
+
+- ✅ Professional login screen with Stack Auth integration (ready)
+- ✅ Executive dashboard with room status and booking management
+- ✅ Sophisticated booking scheduler with date/time picker
+- ✅ Clean QR code generation for secure room entry
+- ✅ PWA support (installable on mobile devices)
+- ✅ Premium UI with subtle transitions
+- ✅ State management with Zustand
+
+## 📦 Tech Stack
+
+- **Framework**: Next.js 16 (App Router)
+- **Styling**: Tailwind CSS 4
+- **State**: Zustand
+- **Animations**: Framer Motion
+- **QR Codes**: qrcode.react
+- **Date Picker**: react-datepicker
+
+## 🛠️ Setup
+
+1. Install dependencies:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Run the development server:
+```bash
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Open [http://localhost:3000](http://localhost:3000)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📱 PWA Installation
 
-## Learn More
+The app is installable as a PWA on mobile devices:
 
-To learn more about Next.js, take a look at the following resources:
+1. Open the app in a mobile browser
+2. Look for "Add to Home Screen" prompt
+3. Install and launch from your home screen
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🔐 Authentication
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Currently using mock authentication. To integrate Stack Auth:
 
-## Deploy on Vercel
+1. Sign up at [Stack Auth](https://stack-auth.com)
+2. Get your API keys
+3. Update the login logic in `app/login/page.tsx`
+4. Add Stack Auth SDK and configuration
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📂 Project Structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+app/
+├── login/          # Login page
+├── home/           # Main dashboard
+├── schedule/       # Booking scheduler
+├── qr/             # QR code display
+├── layout.tsx      # Root layout with PWA setup
+└── globals.css     # Global styles
+
+components/
+├── Header.tsx      # App header
+├── BottomNav.tsx   # Bottom navigation
+├── Button.tsx      # Reusable button component
+├── Card.tsx        # Card container
+└── StatusBadge.tsx # Status indicator
+
+lib/
+├── store.ts        # Zustand state management
+└── utils.ts        # Utility functions
+
+public/
+├── manifest.json   # PWA manifest
+└── sw.js          # Service worker
+```
+
+## 🎯 Next Steps
+
+1. **Add Icons**: Create 192x192 and 512x512 PNG icons for PWA
+2. **Stack Auth**: Integrate real authentication
+3. **Backend**: Connect to Firestore for bookings
+4. **Notifications**: Implement push notifications for reminders
+5. **Testing**: Add user testing and feedback collection
+
+## 🎨 Design Inspiration
+
+The UI follows modern mobile app design principles:
+- Large, touch-friendly buttons
+- Ample whitespace
+- Smooth transitions
+- Clear visual hierarchy
+- Calming color palette
+
+## 📝 Notes
+
+- Mock data is used for room status and bookings
+- Service worker caches key routes for offline access
+- All routes except `/login` require authentication
+- QR codes are generated client-side with booking data
+
+---
+
+Built with ❤️ for a better recharge experience
