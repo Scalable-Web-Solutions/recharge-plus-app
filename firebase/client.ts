@@ -9,7 +9,7 @@ import { getAnalytics } from "firebase/analytics";
 const firebaseConfig = {
   apiKey: "AIzaSyBLD9PWdXPUuCtZlCqdJfOvpU10JonHW7s",
   authDomain: "rechargeplus-c7ddd.firebaseapp.com",
-  projectId: "rechargeplus-c7ddd",
+  projectId: process.env.FB_PROJ_ID,
   storageBucket: "rechargeplus-c7ddd.firebasestorage.app",
   messagingSenderId: "873805158710",
   appId: "1:873805158710:web:a00a1bb6878c65bb55bb97",
