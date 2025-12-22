@@ -74,7 +74,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-cream">
       {/* Header */}
-      <div className="text-center pt-7 pb-12 px-6">
+      <div className="text-center pb-12 px-6 pt-18">
         <div className="border-t border-b border-navy/20 py-8 mb-8 max-w-md mx-auto">
           <h1 className="text-4xl font-light text-navy tracking-[0.2em] mb-2">RECHARGE +</h1>
           <p className="text-sm text-gray-text font-medium tracking-widest uppercase">By Recharge Room</p>
@@ -85,7 +85,7 @@ export default function HomePage() {
       </div>
 
       {/* Menu Items */}
-      <div className="px-6 space-y-4 mb-12">
+      <div className="px-6 space-y-4">
         {menuItems.map((item, index) => (
           <button
             key={index}
