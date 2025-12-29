@@ -9,22 +9,26 @@ export default function ProductsPage() {
     {
       name: "Lavender Essential Oil",
       description: "Pure lavender oil for relaxation and stress relief",
-      price: "$45"
+      price: "$45",
+      image: "https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=400&h=300&fit=crop&crop=center"
     },
     {
       name: "Meditation Cushion",
       description: "Premium organic cotton meditation cushion",
-      price: "$89"
+      price: "$89",
+      image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop&crop=center"
     },
     {
       name: "Adaptogen Blend",
       description: "Natural stress-reducing supplement blend",
-      price: "$65"
+      price: "$65",
+      image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=300&fit=crop&crop=center"
     },
     {
       name: "Himalayan Salt Lamp",
       description: "Authentic crystal salt lamp for air purification",
-      price: "$125"
+      price: "$125",
+      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop&crop=center"
     }
   ];
 
@@ -56,17 +60,29 @@ export default function ProductsPage() {
         {products.map((product, index) => (
           <div
             key={index}
-            className="w-full bg-white/80 backdrop-blur-sm rounded-3xl p-6 flex items-center justify-between transition-all duration-300 hover:bg-white hover:luxury-shadow-lg luxury-border"
+            className="w-full bg-white/80 backdrop-blur-sm rounded-3xl overflow-hidden transition-all duration-300 hover:bg-white hover:luxury-shadow-lg luxury-border"
           >
-            <div className="flex-1">
-              <h3 className="text-lg font-semibold text-navy mb-1">{product.name}</h3>
-              <p className="text-sm text-gray-text leading-relaxed">{product.description}</p>
+            {/* Product Image */}
+            <div className="w-full h-48 bg-gray-100">
+              <img
+                src={product.image}
+                alt={product.name}
+                className="w-full h-full object-cover"
+              />
             </div>
-            <div className="text-right ml-4">
-              <p className="text-xl font-bold text-navy mb-2">{product.price}</p>
-              <button className="bg-transparent border border-navy text-navy px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 hover:bg-navy hover:text-white">
-                Add
-              </button>
+            
+            {/* Product Info */}
+            <div className="p-6 flex items-center justify-between">
+              <div className="flex-1">
+                <h3 className="text-lg font-semibold text-navy mb-1">{product.name}</h3>
+                <p className="text-sm text-gray-text leading-relaxed">{product.description}</p>
+              </div>
+              <div className="text-right ml-4">
+                <p className="text-xl font-bold text-navy mb-2">{product.price}</p>
+                <button className="bg-transparent border border-navy text-navy px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 hover:bg-navy hover:text-white">
+                  Add
+                </button>
+              </div>
             </div>
           </div>
         ))}
